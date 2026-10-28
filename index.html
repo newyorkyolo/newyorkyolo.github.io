@@ -1,4 +1,671 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>NewYork YOLO</title>
-<style>html,body{height:100%;margin:0}body{display:grid;place-items:center;background:#111;color:#f2eeef;font-family:Georgia,"Times New Roman",serif}p{font-family:system-ui,sans-serif;font-size:14px;color:#a79da1;text-align:center;margin:12px 0 0}</style></head>
-<body><div><h1 style="font-weight:500;letter-spacing:.06em;margin:0;text-align:center">NewYork YOLO</h1><p>このサイトは現在公開を停止しています。</p></div></body></html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Legacy New York No.6 ｜ 2026.12.19</title>
+<meta name="description" content="ニューヨーク最大級の日系交流会「Legacy New York」第6回。2026年12月19日（土）18:00〜21:00、Casa Cece（Penn Station近く）で開催。21〜39歳の方が対象、参加費$40。">
+<meta property="og:title" content="Legacy New York No.6 ｜ 2026.12.19">
+<meta property="og:description" content="人生の仲間ができる場所。ニューヨークで暮らす21〜39歳が集まる夜。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://newyorkyolo.github.io/">
+<!-- ケンシロウのチラシ画像を flyer.png として置いたら、下の2行を有効にする -->
+<meta property="og:image" content="https://newyorkyolo.github.io/photos/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111012">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111012'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' text-anchor='middle' fill='%23B11226'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: dark animated hero (skyline + countdown) → marquee → white reading sections → crimson apply band → FAQ → legal footer */
+:root{
+  --ink:#111012; --paper:#f7f4f1; --surface:#ffffff; --text:#1a1719; --text-2:#4d4649; --muted:#7c7377; --line:#e7e1e2;
+  --crimson:#B11226; --crimson-hi:#e8586a; --crimson-ink:#ffffff; --band-muted:#b9b0b4; --gold:#f2c46d;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.8;padding-top:env(safe-area-inset-top,0px);overflow-x:hidden}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-30%;z-index:-1;pointer-events:none;
+  background:radial-gradient(40% 35% at 30% 40%,rgba(177,18,38,.38),transparent 70%),radial-gradient(30% 30% at 75% 70%,rgba(242,196,109,.10),transparent 70%);
+  animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(8%,-6%) rotate(8deg)}}
+.hero .wrap{padding-block:28px 72px;display:grid;position:relative;z-index:1}
+.bar{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:.24em;color:var(--band-muted)}
+.bar b{color:var(--paper);font-weight:500}
+.no{margin-top:56px;font-family:var(--display);font-style:italic;font-size:28px;color:var(--crimson-hi)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(54px,12vw,112px);line-height:.98;margin:4px 0 0;letter-spacing:-.01em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .ln span{display:inline-block}
+.rule{width:96px;height:3px;background:var(--crimson);margin:28px 0 22px;transform-origin:left}
+.lead{font-size:clamp(22px,4.4vw,32px);font-weight:700;line-height:1.5;margin:0}
+.lead small{display:block;font-size:clamp(15px,2.6vw,19px);font-weight:500;color:var(--band-muted);margin-top:6px}
+.when{margin-top:36px;display:flex;align-items:flex-end;gap:16px 22px;flex-wrap:wrap}
+.when .d{font-family:var(--display);font-size:clamp(72px,16vw,128px);line-height:.85;font-weight:500}
+.when .y{display:grid;padding-bottom:6px}
+.when .y span{font-family:var(--display);font-size:26px;letter-spacing:.08em}
+.when .y em{font-style:normal;font-size:14px;color:var(--band-muted);letter-spacing:.12em}
+.when .at{padding-bottom:8px;font-size:15px;line-height:1.6;color:var(--paper);border-left:2px solid var(--crimson);padding-left:14px}
+.when .at span{display:block;color:var(--band-muted);font-size:13px}
+/* split-flap countdown */
+.count{--fs:clamp(30px,6.4vw,56px);margin-top:30px;display:flex;align-items:flex-start;gap:clamp(6px,1.6vw,14px)}
+.count .u{display:grid;justify-items:center;gap:8px}
+.count .digits{display:flex;gap:4px}
+.count i{font-style:normal;font-size:11px;letter-spacing:.24em;color:var(--band-muted)}
+.count .colon{font-family:var(--display);font-size:var(--fs);line-height:1.25;color:var(--crimson-hi);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+.flip{position:relative;display:block;width:calc(var(--fs) * .78);height:calc(var(--fs) * 1.25);font-family:var(--display);font-size:var(--fs);font-weight:500;font-variant-numeric:lining-nums tabular-nums;color:var(--paper);perspective:calc(var(--fs) * 6);border-radius:6px;box-shadow:0 10px 22px -10px rgba(0,0,0,.9),0 0 0 1px rgba(247,244,241,.08)}
+.flip .h{position:absolute;left:0;right:0;height:50%;overflow:hidden;backface-visibility:hidden}
+.flip .h > span{position:absolute;left:0;right:0;height:200%;display:grid;place-items:center;line-height:1}
+.flip .top,.flip .ftop{top:0;border-radius:6px 6px 0 0;background:linear-gradient(#2a2528,#201c1e)}
+.flip .bot,.flip .fbot{bottom:0;border-radius:0 0 6px 6px;background:linear-gradient(#1c191b,#151314)}
+.flip .bot > span,.flip .fbot > span{top:-100%}
+.flip .top > span,.flip .ftop > span{top:0}
+.flip::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.75);z-index:3}
+.flip::before{content:"";position:absolute;left:-2px;right:-2px;top:calc(50% - 3px);height:6px;z-index:4;background:linear-gradient(90deg,#3a3437 0 3px,transparent 3px calc(100% - 3px),#3a3437 calc(100% - 3px))}
+.flip .ftop{z-index:2;transform-origin:50% 100%;animation:fliptop .32s ease-in forwards}
+.flip .fbot{z-index:2;transform-origin:50% 0;transform:rotateX(90deg);animation:flipbot .32s ease-out .32s forwards}
+@keyframes fliptop{to{transform:rotateX(-90deg);filter:brightness(.6)}}
+@keyframes flipbot{from{filter:brightness(1.6)}to{transform:rotateX(0)}}
+.count .s .flip{color:var(--crimson-hi)}
+html:not(.js) .count{display:none}
+.cta-row{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;font:inherit;font-weight:700;font-size:16px;letter-spacing:.06em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .25s var(--ease),background-color .25s}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::after{left:130%}
+.btn .arw{transition:transform .25s var(--ease)}
+.btn:hover .arw{transform:translateX(4px)}
+.btn.primary{background:var(--crimson);color:var(--crimson-ink)}
+.btn.primary:hover{background:#951020}
+.btn.ghost{border-color:var(--paper);color:var(--paper);background:transparent}
+.hero .btn.primary{animation:pulse 2.6s ease-out 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,88,106,.55)}70%{box-shadow:0 0 0 16px rgba(232,88,106,0)}100%{box-shadow:0 0 0 0 rgba(232,88,106,0)}}
+/* skyline with twinkling windows */
+.sky{position:absolute;inset:auto 0 0 0;height:320px;display:flex;align-items:flex-end;gap:8px;padding:0 12px;opacity:.22;pointer-events:none;z-index:0}
+.sky i{flex:1;max-width:34px;border-top:2px solid var(--paper);transform-origin:bottom;
+  background:repeating-linear-gradient(to bottom,transparent 0 10px,rgba(247,244,241,.55) 10px 13px),linear-gradient(rgba(247,244,241,.5),transparent);
+  -webkit-mask:repeating-linear-gradient(to right,#000 0 4px,transparent 4px 7px);mask:repeating-linear-gradient(to right,#000 0 4px,transparent 4px 7px)}
+.sky i:nth-child(3n){animation:twinkle 3.8s ease-in-out infinite}
+.sky i:nth-child(4n+1){animation:twinkle 5.2s ease-in-out .8s infinite}
+@keyframes twinkle{50%{opacity:.35}}
+/* past-event photo, faded into the dark hero from the left and bottom */
+.shot{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.shot::before{content:"";position:absolute;inset:0;background:url(photos/hero.jpg) center 35%/cover no-repeat;filter:saturate(.85) contrast(1.05) brightness(.85);opacity:0;transform:scale(1.08);transition:opacity 1.6s var(--ease) .4s;animation:kenburns 26s ease-in-out infinite alternate}
+.hero.loaded .shot::before{opacity:.6}
+.shot::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(45% 55% at 22% 45%,rgba(120,10,26,.55),transparent 75%),
+    linear-gradient(90deg,rgba(17,16,18,.82) 0%,rgba(17,16,18,.6) 40%,rgba(17,16,18,.25) 75%,rgba(17,16,18,.4) 100%),
+    linear-gradient(0deg,var(--ink) 0%,rgba(17,16,18,0) 35%),
+    linear-gradient(180deg,rgba(17,16,18,.8) 0%,rgba(17,16,18,0) 20%)}
+@keyframes kenburns{to{transform:scale(1.16) translate(-2%,-1%)}}
+
+/* marquee */
+.marquee{background:var(--crimson);color:var(--crimson-ink);overflow:hidden;white-space:nowrap;border-block:1px solid #7d0c1a}
+.marquee .track{display:inline-flex;gap:0;animation:scroll 32s linear infinite;padding-block:12px}
+.marquee span{font-family:var(--display);font-size:18px;letter-spacing:.14em;padding-right:28px}
+.marquee span::after{content:"✦";padding-left:28px;color:#ffd9de}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+main section{padding-block:84px;border-bottom:1px solid var(--line)}
+main section .wrap{display:grid;gap:28px}
+.eyebrow{font-family:var(--display);color:var(--crimson);font-size:15px;letter-spacing:.12em;display:flex;align-items:center;gap:12px}
+.eyebrow::after{content:"";height:1px;width:48px;background:currentColor;opacity:.6}
+h2{font-size:clamp(24px,4vw,32px);line-height:1.4;margin:0;text-wrap:balance}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.prose p{margin:0 0 14px;color:var(--text-2);max-width:62ch}
+.prose a{color:var(--crimson);text-underline-offset:3px;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:22px 0 16px}
+.stats div{padding:16px 12px 14px 0;display:grid;gap:2px}
+.stats div+div{padding-left:16px;border-left:1px solid var(--line)}
+.stats b{font-family:var(--display);font-size:clamp(34px,6vw,48px);font-weight:700;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.stats small{font-size:.45em;color:var(--crimson);margin-left:2px}
+.stats div > span{font-size:12px;color:var(--muted);letter-spacing:.06em}
+.points{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.points li{background:var(--surface);border:1px solid var(--line);padding:18px 20px;display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:16px;row-gap:4px;position:relative;transition:transform .3s var(--ease),box-shadow .3s}
+.points .pi{grid-row:1 / span 2;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);transition:background-color .3s}
+.points li:hover .pi{background:var(--crimson)}
+.points .pi svg{width:22px;height:22px;stroke:var(--paper);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.points li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--crimson);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
+.points li:hover{transform:translateX(4px);box-shadow:0 10px 30px -18px rgba(17,16,18,.45)}
+.points li:hover::before{transform:scaleY(1)}
+.points b{font-size:17px}
+.points span{color:var(--text-2);font-size:15px}
+/* info tiles */
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"date time venue venue" "price age pay bring"}
+.tile{background:var(--surface);border:1px solid var(--line);padding:20px 20px 18px;display:grid;gap:4px;align-content:start;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 14px 30px -20px rgba(17,16,18,.5)}
+.tile i{font-style:normal;font-family:var(--display);font-size:12px;letter-spacing:.2em;color:var(--crimson)}
+.tile b{font-family:var(--display);font-size:clamp(26px,3.4vw,34px);font-weight:700;line-height:1.15;margin:4px 0 2px}
+.tile span{font-size:13px;color:var(--text-2);line-height:1.6}
+.tile a{color:var(--crimson);font-size:14px;font-weight:700;text-underline-offset:3px}
+.t-date{grid-area:date}.t-time{grid-area:time}.t-price{grid-area:price}.t-age{grid-area:age}.t-pay{grid-area:pay}
+.t-bring{grid-area:bring;background:var(--crimson);border-color:var(--crimson);color:var(--crimson-ink)}
+.t-bring i{color:#ffd9de}.t-bring span{color:#ffe9ec}
+.t-bring .bi{position:absolute;top:16px;right:16px}
+.t-bring .bi svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.t-venue{grid-area:venue;background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.t-venue i{color:var(--crimson-hi)}.t-venue span{color:var(--band-muted)}.t-venue a{color:var(--paper)}
+/* the night: slide-style timeline */
+.night{background:var(--ink);color:var(--paper);padding:40px 36px 44px;position:relative;overflow:hidden;isolation:isolate;margin-top:12px}
+.night::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 80% at 50% 0%,rgba(177,18,38,.35),transparent 70%),linear-gradient(rgba(247,244,241,.04) 1px,transparent 1px) 0 0/100% 32px}
+.night-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap;margin-bottom:44px}
+.night .eyebrow{color:var(--crimson-hi)}
+.night h3{font-size:clamp(24px,4vw,34px);margin:6px 0 0;line-height:1.3}
+.night-time{display:flex;align-items:center;gap:14px;font-family:var(--display);font-size:clamp(24px,4vw,34px);font-weight:500}
+.night-time .dash{width:72px;height:2px;background:linear-gradient(90deg,var(--paper),var(--crimson-hi))}
+.night-time small{display:block;font-family:var(--body);font-size:10px;letter-spacing:.24em;color:var(--band-muted);margin-top:4px}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;position:relative}
+.tl::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:linear-gradient(90deg,rgba(247,244,241,.55),var(--crimson-hi) 50%,rgba(247,244,241,.55));transform-origin:left}
+.tl li{position:relative;display:grid;gap:6px;justify-items:start;align-content:start}
+.ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#1d1a1c;border:1px solid rgba(247,244,241,.35);position:relative;z-index:1;margin-bottom:14px;transition:transform .3s var(--ease)}
+.tl li:hover .ic{transform:scale(1.08)}
+.ic svg{width:24px;height:24px;stroke:var(--paper);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.num{font-family:var(--display);color:var(--crimson-hi);font-size:14px;letter-spacing:.12em}
+.tl b{font-size:19px;line-height:1.4}
+.tl .sub{font-size:13px;color:var(--band-muted);line-height:1.65}
+
+/* apply */
+.apply{background:var(--crimson);color:var(--crimson-ink);border-bottom:0!important;position:relative;overflow:hidden;isolation:isolate}
+.apply::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.12;background:repeating-linear-gradient(-45deg,#fff 0 1px,transparent 1px 22px);animation:slide 20s linear infinite}
+@keyframes slide{to{background-position:220px 0}}
+.apply .eyebrow{color:#ffd9de}
+.apply p{margin:0;max-width:62ch}
+.apply .btn.primary{background:var(--ink)}
+.apply .btn.primary:hover{background:#000}
+.apply-split:not(.has-flyer){grid-template-columns:minmax(0,1fr)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:0;padding:0;list-style:none}
+.steps li{position:relative;border:1px solid rgba(255,255,255,.45);background:rgba(17,16,18,.14);padding:18px 18px 16px;font-size:15px;line-height:1.6;display:grid;gap:8px;transition:background-color .3s,transform .3s var(--ease)}
+.steps li:hover{background:rgba(17,16,18,.3);transform:translateY(-3px)}
+.steps li:not(:last-child)::after{content:"";position:absolute;right:-22px;top:50%;width:14px;height:14px;border-top:2px solid #fff;border-right:2px solid #fff;transform:translateY(-50%) rotate(45deg)}
+.steps .sh{display:flex;justify-content:space-between;align-items:center}
+.steps b{font-family:var(--display);font-size:26px;font-weight:500;line-height:1}
+.steps svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.flyer{width:100%;max-width:420px;height:auto;display:block;border:1px solid rgba(255,255,255,.3);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+
+/* faq */
+.faq{display:grid;gap:0;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);background:var(--surface);transition:background-color .2s}
+details:hover{background:#fdfbfa}
+summary{cursor:pointer;list-style:none;padding:18px 52px 18px 20px;font-weight:700;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:20px;top:12px;font-family:var(--display);font-size:26px;color:var(--crimson);transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0;padding:0 20px 20px;color:var(--text-2)}
+details[open] p{animation:fadein .35s var(--ease)}
+@keyframes fadein{from{opacity:0;transform:translateY(-6px)}}
+
+/* footer */
+footer{background:var(--ink);color:var(--band-muted);font-size:13px}
+footer .wrap{padding-block:40px calc(40px + env(safe-area-inset-bottom,0px));display:grid;gap:18px}
+footer h3{color:var(--paper);font-size:14px;margin:0 0 8px;font-weight:700}
+.legal{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 16px;margin:0}
+.legal dt{color:var(--paper)}
+.legal dd{margin:0}
+.copy-mail{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
+.copy-mail button{font:inherit;font-size:12px;padding:3px 10px;background:transparent;border:1px solid var(--band-muted);color:var(--paper);cursor:pointer}
+.sns{display:flex;gap:16px;flex-wrap:wrap}
+.sns a{color:var(--paper)}
+
+/* photo strip (shown only when SITE.photos has items) */
+.photos{background:var(--ink);padding-block:28px;overflow:hidden;border-bottom:0!important}
+.photos .strip{display:flex;gap:12px;width:max-content;animation:scroll 60s linear infinite}
+.photos:hover .strip{animation-play-state:paused}
+.photos figure{margin:0;width:clamp(200px,28vw,300px);aspect-ratio:4/5;overflow:hidden;flex:none;background:#1d1a1c}
+.photos img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);transition:transform .6s var(--ease),filter .6s}
+.photos figure:hover img{transform:scale(1.05);filter:none}
+.photos .more{display:block;text-align:center;margin-top:18px;color:var(--paper);font-size:14px;text-underline-offset:4px}
+
+/* prize popup */
+.prize-open{all:unset;cursor:pointer;color:inherit;border-bottom:1px dashed currentColor;font-weight:700}
+.prize-open:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+dialog.prizes{border:0;padding:0;max-width:min(560px,calc(100vw - 32px));width:100%;background:var(--ink);color:var(--paper);box-shadow:0 40px 80px -20px rgba(0,0,0,.7)}
+dialog.prizes::backdrop{background:rgba(17,16,18,.72);backdrop-filter:blur(4px)}
+dialog.prizes[open]{animation:pop .45s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.96)}}
+.prizes .ph{position:relative;padding:28px 28px 20px;background:radial-gradient(80% 120% at 0% 0%,rgba(177,18,38,.55),transparent 70%)}
+.prizes .ph i{font-style:normal;font-family:var(--display);color:var(--crimson-hi);letter-spacing:.2em;font-size:13px}
+.prizes .ph h3{margin:6px 0 0;font-size:24px}
+.prizes .x{position:absolute;top:14px;right:14px;width:40px;height:40px;border:1px solid rgba(247,244,241,.3);background:transparent;color:var(--paper);font-size:20px;cursor:pointer}
+.prizes ul{list-style:none;margin:0;padding:8px 28px 28px;display:grid;gap:10px}
+.prizes li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;align-items:center;padding:12px;border:1px solid rgba(247,244,241,.14);background:rgba(247,244,241,.03)}
+.prizes li img,.prizes li .ph0{width:56px;height:56px;object-fit:cover;background:#2a2528;display:grid;place-items:center;font-family:var(--display);color:var(--crimson-hi)}
+.prizes li b{display:block;font-size:16px}
+.prizes li span{font-size:13px;color:var(--band-muted)}
+.prizes .none{padding:8px 28px 28px;color:var(--band-muted);font-size:14px;margin:0}
+.prizes .none a{color:var(--paper)}
+
+/* ---------- motion (only when JS is on and motion is allowed) ---------- */
+.js .in{opacity:0;transform:translateY(18px)}
+.js .loaded .in{animation:rise .9s var(--ease) forwards;animation-delay:calc(var(--i,0) * 110ms)}
+.js h1 .ln span{transform:translateY(105%)}
+.js .loaded h1 .ln span{animation:lineup 1s var(--ease) forwards;animation-delay:calc(200ms + var(--i,0) * 130ms)}
+.js .rule{transform:scaleX(0)}
+.js .loaded .rule{animation:grow .9s var(--ease) .7s forwards}
+.js .sky i{transform:scaleY(0)}
+.js .loaded .sky i{animation:build 1.4s var(--ease) forwards;animation-delay:calc(var(--i,0) * 60ms)}
+.js .loaded .sky i:nth-child(3n){animation:build 1.4s var(--ease) forwards,twinkle 3.8s ease-in-out 2s infinite;animation-delay:calc(var(--i,0) * 60ms),2s}
+.js .loaded .sky i:nth-child(4n+1){animation:build 1.4s var(--ease) forwards,twinkle 5.2s ease-in-out 2.6s infinite;animation-delay:calc(var(--i,0) * 60ms),2.6s}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes lineup{to{transform:none}}
+@keyframes grow{to{transform:scaleX(1)}}
+@keyframes build{to{transform:scaleY(1)}}
+.js [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0) * 90ms)}
+.js [data-reveal].shown{opacity:1;transform:none}
+.js .tiles .tile{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease),box-shadow .3s;transition-delay:calc(var(--i,0) * 90ms)}
+.js .tiles.shown .tile{opacity:1;transform:none}
+.js .steps li{opacity:0;transform:translateX(-14px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(200ms + var(--i,0) * 200ms)}
+.js .shown .steps li{opacity:1;transform:none}
+.js .tl::before{transform:scaleX(0);transition:transform 1.6s var(--ease) .2s}
+.js .night.shown .tl::before{transform:scaleX(1)}
+.js .tl li{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(350ms + var(--i,0) * 220ms)}
+.js .night.shown .tl li{opacity:1;transform:none}
+.js .tl .ic{transform:scale(.4)}
+.js .night.shown .tl .ic{transform:none;transition:transform .6s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(350ms + var(--i,0) * 220ms)}
+
+@media (max-width:720px){
+  .split{grid-template-columns:minmax(0,1fr);gap:28px}
+  .night{padding:32px 20px 36px}
+  .night-head{margin-bottom:32px}
+  .tl{grid-template-columns:minmax(0,1fr);gap:26px}
+  .tl::before{left:27px;right:auto;width:2px;top:28px;bottom:28px;height:auto;background:linear-gradient(rgba(247,244,241,.55),var(--crimson-hi) 50%,rgba(247,244,241,.55));transform-origin:top}
+  .js .tl::before{transform:scaleY(0)}
+  .js .night.shown .tl::before{transform:scaleY(1)}
+  .tl li{grid-template-columns:56px minmax(0,1fr);column-gap:18px;row-gap:2px}
+  .tl li .ic{grid-row:1 / span 4;margin-bottom:0}
+  .tl li > :not(.ic){grid-column:2}
+  .steps{grid-template-columns:minmax(0,1fr);gap:26px}
+  .steps li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-20px;transform:translateX(-50%) rotate(135deg)}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"date time" "venue venue" "price age" "pay bring"}
+  .legal{grid-template-columns:minmax(0,1fr);gap:2px}
+  .legal dd{margin-bottom:8px}
+  main section{padding-block:60px}
+  .sky{height:240px}
+  .shot{inset:0}
+  .hero.loaded .shot::before{opacity:.45}
+  .shot::after{background:linear-gradient(180deg,rgba(17,16,18,.8) 0%,rgba(17,16,18,.55) 45%,var(--ink) 100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .in,.js [data-reveal],.js h1 .ln span,.js .rule,.js .sky i,.js .tl::before,.js .tl li,.js .tl .ic,.js .tiles .tile,.js .steps li{opacity:1!important;transform:none!important}
+  /* めくり時計は時刻表示そのものなので、動きを減らす設定でもめくる */
+  .flip .ftop{animation:fliptop .32s ease-in forwards!important}
+  .flip .fbot{animation:flipbot .32s ease-out .32s forwards!important}
+  .hero .shot::before{opacity:.6}
+}
+@media (prefers-reduced-motion:reduce) and (max-width:720px){.hero .shot::before{opacity:.45}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="shot" aria-hidden="true"></div>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="bar in" style="--i:0"><span>NEW YORK CITY</span><b>NewYork YOLO</b></div>
+    <div class="no in" style="--i:1">No.6</div>
+    <h1><span class="ln"><span style="--i:0">Legacy</span></span><span class="ln"><span style="--i:1">New York</span></span></h1>
+    <div class="rule"></div>
+    <p class="lead in" style="--i:6">人生の仲間ができる場所。<small>ニューヨーク最大級の日系交流会</small></p>
+    <div class="when in" style="--i:7">
+      <div class="d">12.19</div>
+      <div class="y"><span>SAT</span><em>2026</em></div>
+      <div class="at">18:00〜21:00<span>Casa Cece ／ $40</span></div>
+    </div>
+    <div class="count in" style="--i:8" id="count" role="img" aria-label="開催までの残り時間">
+      <div class="u" data-k="d"><span class="digits"></span><i>DAYS</i></div>
+      <span class="colon" aria-hidden="true">:</span>
+      <div class="u" data-k="h"><span class="digits"></span><i>HOURS</i></div>
+      <span class="colon" aria-hidden="true">:</span>
+      <div class="u" data-k="m"><span class="digits"></span><i>MIN</i></div>
+      <span class="colon" aria-hidden="true">:</span>
+      <div class="u s" data-k="s"><span class="digits"></span><i>SEC</i></div>
+    </div>
+    <script>
+    /* 開催 2026-12-19 18:00 ニューヨーク時間（EST = UTC-5）までの残りを、めくり式の時計で毎秒更新。他のスクリプトに依存させない */
+    (function () {
+      var target = Date.UTC(2026, 11, 19, 23, 0, 0);
+      var box = document.getElementById("count");
+      var cards = {};
+      function half(cls, v) { return '<span class="h ' + cls + '"><span>' + v + "</span></span>"; }
+      box.querySelectorAll(".u").forEach(function (u) {
+        var wrap = u.querySelector(".digits"); cards[u.dataset.k] = [];
+        for (var k = 0; k < 2; k++) {
+          var f = document.createElement("span");
+          f.className = "flip"; f.dataset.v = ""; f.innerHTML = half("top", "") + half("bot", "");
+          wrap.appendChild(f); cards[u.dataset.k].push(f);
+        }
+      });
+      function set(f, v) {
+        var old = f.dataset.v;
+        if (old === v) return;
+        f.dataset.v = v;
+        if (old === "") { f.innerHTML = half("top", v) + half("bot", v); return; }
+        // 上半分は新しい数字、下半分は古い数字のまま → 上の板が倒れ、下の板が新しい数字で降りてくる
+        f.innerHTML = half("top", v) + half("bot", old) + half("ftop", old) + half("fbot", v);
+        clearTimeout(f._t);
+        f._t = setTimeout(function () { f.innerHTML = half("top", v) + half("bot", v); }, 680);
+      }
+      function show(k, n) { var s = (n < 10 ? "0" : "") + n; set(cards[k][0], s[0]); set(cards[k][1], s[1]); }
+      function tick() {
+        var t = Math.max(0, Math.floor((target - Date.now()) / 1000));
+        if (t === 0) { box.hidden = true; return; }
+        show("d", Math.min(99, Math.floor(t / 86400)));
+        show("h", Math.floor(t % 86400 / 3600));
+        show("m", Math.floor(t % 3600 / 60));
+        show("s", t % 60);
+        box.setAttribute("aria-label", "開催まであと" + Math.floor(t / 86400) + "日" + Math.floor(t % 86400 / 3600) + "時間");
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+    </script>
+    <div class="cta-row in" style="--i:9">
+      <a class="btn primary" id="applyTop" href="#apply">チケットを申し込む <span class="arw" aria-hidden="true">→</span></a>
+      <a class="btn ghost" href="#faq">よくある質問</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="track"><span>LEGACY NEW YORK</span><span>No.6</span><span>12.19.2026</span><span>CASA CECE</span><span>18:00 — 21:00</span><span>NEW YORK CITY</span></div></div>
+
+<main>
+  <section class="photos" id="photos" aria-label="過去開催の写真" hidden>
+    <div class="strip" id="strip"></div>
+    <a class="more" href="https://www.instagram.com/kenshiro_newyorkyolo/" target="_blank" rel="noopener">Instagramでもっと見る →</a>
+  </section>
+
+  <section id="about" aria-labelledby="h-about">
+    <div class="wrap">
+      <div class="eyebrow" data-reveal>ABOUT</div>
+      <div class="split">
+        <div class="prose" data-reveal>
+          <h2 id="h-about">違う業界、違う環境で戦う人が、ここでつながる。</h2>
+          <p style="margin-top:16px">Legacy New York は、ニューヨークで暮らす21〜39歳のための日系交流会です。社会人・駐在員・起業家・学生まで、業界も立場も違う人が一つの場所に集まります。新しい友人はもちろん、ビジネスやキャリアにつながる出会いもあります。</p>
+          <div class="stats">
+            <div><b><span data-to="5">5</span><small>回</small></b><span>これまでの開催</span></div>
+            <div><b><span data-to="600">600</span><small>+</small></b><span>延べ参加者</span></div>
+            <div><b>21–39</b><span>対象年齢</span></div>
+          </div>
+          <p><a href="https://www.instagram.com/p/DXVGdhPFHDL/" target="_blank" rel="noopener">過去開催の写真を見る →</a></p>
+        </div>
+        <ul class="points">
+          <li data-reveal style="--i:1"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="4.5"/><path d="M3 12v2.5c0 2.5 4 4.5 9 4.5s9-2 9-4.5V12"/><path d="M15 10.5v3"/></svg></span><b>業界別リストバンド</b><span>受付で業界ごとのリストバンドをお渡しします。初対面でも、話しかけるきっかけがすぐに見つかります。</span></li>
+          <li data-reveal style="--i:2"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20c.8-3.8 3.6-6 7-6s6.2 2.2 7 6"/></svg></span><b>1人参加も歓迎</b><span>知り合いがいなくても大丈夫です。誰とでも話せる場をつくっています。</span></li>
+          <li data-reveal style="--i:3"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0"/></svg></span><b>抽選会あり</b><span>当日は抽選会を行います。<button type="button" class="prize-open" data-prizes>景品を見る</button></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="info" aria-labelledby="h-info">
+    <div class="wrap">
+      <div class="eyebrow" data-reveal>EVENT</div>
+      <h2 id="h-info" data-reveal>開催概要</h2>
+      <div class="tiles" data-reveal>
+        <div class="tile t-date" style="--i:0"><i>DATE</i><b>12.19 SAT</b><span>2026年12月19日（土）</span></div>
+        <div class="tile t-time" style="--i:1"><i>TIME</i><b>18:00–21:00</b><span>ニューヨーク時間</span></div>
+        <div class="tile t-venue" style="--i:2"><i>VENUE</i><b>Casa Cece</b><a href="https://www.google.com/maps/search/?api=1&query=315+W+35th+St+New+York+NY+10001" target="_blank" rel="noopener">315 W 35th St, New York, NY 10001 ↗</a><span>Penn Stationから徒歩圏内</span></div>
+        <div class="tile t-price" style="--i:3"><i>PRICE</i><b>$40</b><span>軽食あり／ドリンクは各自購入</span></div>
+        <div class="tile t-age" style="--i:4"><i>AGE</i><b>21–39</b><span>社会人・駐在員・起業家・学生<br>21歳未満の方は参加できません</span></div>
+        <div class="tile t-pay" style="--i:5"><i>PAYMENT</i><b>Partiful</b><span>オンライン事前決済</span></div>
+        <div class="tile t-bring" style="--i:6"><span class="bi" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="9" cy="12" r="2.2"/><path d="M14 10.5h4M14 13.5h3"/></svg></span><i>BRING</i><b>写真付きID</b><span>またはパスポート。入場時に必須です</span></div>
+      </div>
+      <div class="night" data-reveal>
+        <div class="night-head">
+          <div><div class="eyebrow">THE NIGHT</div><h3>当日の流れ</h3></div>
+          <div class="night-time"><div>18:00<small>OPEN</small></div><span class="dash" aria-hidden="true"></span><div>21:00<small>CLOSE</small></div></div>
+        </div>
+        <ol class="tl">
+          <li style="--i:0">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="9" cy="12" r="2.2"/><path d="M14 10.5h4M14 13.5h3"/></svg></span>
+            <span class="num">01</span><b>受付</b><span class="sub">チケット・IDの確認<br>業界別リストバンドのお渡し</span>
+          </li>
+          <li style="--i:1">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h11v8H9l-3 3v-3H4z"/><path d="M15 9h5v8h-2v3l-3-3h-4v-3"/></svg></span>
+            <span class="num">02</span><b>交流</b><span class="sub">リストバンドの色を目印に、気になる業界の人へ</span>
+          </li>
+          <li style="--i:2">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0"/></svg></span>
+            <span class="num">03</span><b>抽選会</b><span class="sub"><button type="button" class="prize-open" data-prizes>景品を見る</button></span>
+          </li>
+          <li style="--i:3">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h5l-.6 6a2 2 0 0 1-3.8 0zM8.5 11v8M6 20h5M13 3h5l-.6 6a2 2 0 0 1-3.8 0zM15.5 11v8M13 20h5"/></svg></span>
+            <span class="num">04</span><b>交流</b><span class="sub">抽選会のあとも、話し足りない人ともう一度</span>
+          </li>
+          <li style="--i:4">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M10.5 18.5h3M10 8.5h4M10 11.5h4"/></svg></span>
+            <span class="num">05</span><b>クロージング</b><span class="sub">参加者用LINEグループのご案内</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="apply" aria-labelledby="h-apply">
+    <div class="wrap">
+      <div class="eyebrow" data-reveal>TICKET</div>
+      <div class="split apply-split" id="applySplit">
+        <div style="display:grid;gap:22px" data-reveal>
+          <h2 id="h-apply">お申し込み</h2>
+          <p>お申し込みはイベントページ（Partiful）で受け付けています。下のボタンから進み、「Get tickets」から申し込み・お支払いをしてください。</p>
+          <ol class="steps">
+            <li style="--i:0"><span class="sh"><b>01</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 0 0 4v4h16v-4a2 2 0 0 1 0-4V4H4z" transform="translate(0 2)"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></span>Partifulで「Get tickets」</li>
+            <li style="--i:1"><span class="sh"><b>02</b><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>オンラインで決済</li>
+            <li style="--i:2"><span class="sh"><b>03</b><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="9" cy="12" r="2.2"/><path d="M14 10.5h4M14 13.5h3"/></svg></span>当日、チケットと写真付きIDを受付で提示</li>
+          </ol>
+          <p style="font-size:14px">複数名で参加する場合も、<b>お一人ずつ</b>お申し込み・お支払いをお願いします。お支払い後のキャンセル・返金はできません。</p>
+          <div class="cta-row" style="margin-top:0">
+            <a class="btn primary" id="applyBtn" href="https://partiful.com/e/rE49051AQSv8HN5Ysk31" target="_blank" rel="noopener">申し込む <span class="arw" aria-hidden="true">→</span></a>
+          </div>
+          <p style="font-size:13px;opacity:.85">お申し込み時にいただいた情報は、受付・当日の運営・次回のご案内にのみ使用します。当日の写真・動画をSNS等で使用する場合があります。このサイトの閲覧状況は、個人が特定されない形で集計しています。</p>
+        </div>
+        <div id="flyerBox" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="h-faq">
+    <div class="wrap">
+      <div class="eyebrow" data-reveal>FAQ</div>
+      <h2 id="h-faq" data-reveal>よくある質問</h2>
+      <div class="faq" data-reveal>
+        <details><summary>1人でも参加できますか？</summary><p>はい、1人での参加も歓迎しています。業界が分かるリストバンドをお配りするので、初対面でも話しかけるきっかけが作れます。</p></details>
+        <details><summary>どんな人が参加しますか？</summary><p>社会人・駐在員・起業家・学生など、さまざまなバックグラウンドの方が集まります。Legacy New York はこれまでに延べ600人以上が参加しています。</p></details>
+        <details><summary>年齢制限はありますか？学生でも参加できますか？</summary><p>21〜39歳の方が対象です。学生の方も21歳以上なら参加できます。21歳未満の方は参加できません。</p></details>
+        <details><summary>支払い方法は？友達とまとめて申し込めますか？</summary><p>Partiful（イベントページ）でのオンライン事前決済です。複数名で参加する場合も、お一人ずつお申し込み・お支払いをお願いします。</p></details>
+        <details><summary>当日は何を持っていけばいいですか？</summary><p>写真付きIDまたはパスポートが入場時に必須です。受付でPartifulのチケットとあわせてご提示ください。</p></details>
+        <details><summary>キャンセルや返金はできますか？</summary><p>お申し込み・お支払い完了後のキャンセルおよび返金はお受けしていません。あらかじめご了承のうえお申し込みください。</p></details>
+        <details><summary>禁止事項はありますか？</summary><p>勧誘・宗教活動・ネットワークビジネスは禁止です。</p></details>
+        <details><summary>写真や動画の撮影はありますか？</summary><p>運営スタッフが会場の様子を撮影し、写真・動画をSNS等で使用する場合があります。写りたくない方は受付でお申し出ください。</p></details>
+        <details><summary>当日の連絡はどこに来ますか？</summary><p>当日の詳細はLINEグループでご案内します。グループのリンクはPartifulのイベントページに載っています。</p></details>
+      </div>
+      <div class="cta-row" style="margin-top:8px" data-reveal>
+        <a class="btn primary" href="https://partiful.com/e/rE49051AQSv8HN5Ysk31" target="_blank" rel="noopener">申し込む <span class="arw" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>お問い合わせ</h3>
+      <span class="copy-mail"><span id="mail">kunishima@livingquestny.com</span><button type="button" id="copyMail">コピー</button></span>
+    </div>
+    <div>
+      <h3>最新情報</h3>
+      <div class="sns"><a href="https://www.instagram.com/kenshiro_newyorkyolo/" target="_blank" rel="noopener">Instagram @kenshiro_newyorkyolo</a></div>
+    </div>
+    <div>
+      <h3>特定商取引法に基づく表記</h3>
+      <dl class="legal">
+        <dt>販売事業者</dt><dd>NewYork YOLO</dd>
+        <dt>運営責任者・所在地・電話番号</dt><dd>請求があった場合は遅滞なく開示いたします</dd>
+        <dt>メールアドレス</dt><dd>kunishima@livingquestny.com</dd>
+        <dt>販売価格</dt><dd>一律 $40（このページに記載）</dd>
+        <dt>商品代金以外の必要料金</dt><dd>なし（通信費はお客様のご負担となります）</dd>
+        <dt>支払方法・時期</dt><dd>Partifulでのオンライン決済。お申し込み時に決済が確定します</dd>
+        <dt>サービス提供時期</dt><dd>2026年12月19日（土）18:00〜21:00（ニューヨーク時間）</dd>
+        <dt>キャンセル・返金</dt><dd>お申し込み・お支払い完了後のキャンセルおよび返金はお受けしていません</dd>
+      </dl>
+    </div>
+    <div>© NewYork YOLO</div>
+  </div>
+</footer>
+
+<script>
+/* 素材が届いたらここだけ埋める。空のままの欄は表示しない（景品は「近日発表」表示） */
+const SITE = {
+  flyerSrc: "",   // チラシ画像。このフォルダに flyer.png を置いたら "flyer.png"
+  flyerLink: "",  // チラシを画像でなくリンクで共有された場合のURL（Canva等）
+  photos: [       // 過去開催の写真。photos/ に置いて { src: "photos/01.jpg", alt: "説明" } を並べる
+  ],
+  prizes: [       // 抽選会の景品。スポンサーが確定したものだけ { name: "景品名", sponsor: "提供元", img: "任意" }
+  ]
+};
+
+/* photo strip: duplicated once so the loop is seamless */
+if (SITE.photos.length) {
+  const strip = document.getElementById("strip");
+  const fig = p => { const f = document.createElement("figure"); const i = new Image(); i.src = p.src; i.alt = p.alt || ""; i.loading = "lazy"; f.appendChild(i); return f; };
+  SITE.photos.forEach(p => strip.appendChild(fig(p)));
+  SITE.photos.forEach(p => { const f = fig(p); f.setAttribute("aria-hidden", "true"); strip.appendChild(f); });
+  document.getElementById("photos").hidden = false;
+}
+
+/* prize popup */
+const dlg = document.createElement("dialog");
+dlg.className = "prizes";
+dlg.setAttribute("aria-labelledby", "prizeTitle");
+dlg.innerHTML = '<div class="ph"><i>LUCKY DRAW</i><h3 id="prizeTitle">抽選会の景品</h3><button type="button" class="x" aria-label="閉じる">×</button></div>';
+if (SITE.prizes.length) {
+  const ul = document.createElement("ul");
+  SITE.prizes.forEach((p, n) => {
+    const li = document.createElement("li");
+    const pic = p.img ? Object.assign(new Image(), { src: p.img, alt: "" }) : Object.assign(document.createElement("span"), { className: "ph0", textContent: String(n + 1).padStart(2, "0") });
+    const t = document.createElement("div");
+    t.innerHTML = "<b></b><span></span>";
+    t.querySelector("b").textContent = p.name;
+    t.querySelector("span").textContent = p.sponsor ? "提供：" + p.sponsor : "";
+    li.append(pic, t); ul.appendChild(li);
+  });
+  dlg.appendChild(ul);
+} else {
+  const p = document.createElement("p");
+  p.className = "none";
+  p.innerHTML = '景品は決まり次第、ここと<a href="https://www.instagram.com/kenshiro_newyorkyolo/" target="_blank" rel="noopener">Instagram</a>で発表します。';
+  dlg.appendChild(p);
+}
+document.body.appendChild(dlg);
+dlg.querySelector(".x").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+document.querySelectorAll("[data-prizes]").forEach(b => b.addEventListener("click", () => {
+  dlg.showModal();
+  if (typeof sendMetric === "function") sendMetric("faq", { faq: "景品ポップアップ" });
+}));
+const box = document.getElementById("flyerBox");
+if (SITE.flyerSrc) {
+  const img = new Image();
+  img.className = "flyer"; img.src = SITE.flyerSrc; img.alt = "Legacy New York No.6 のチラシ";
+  box.replaceChildren(img);
+} else if (SITE.flyerLink) {
+  box.innerHTML = '<a class="btn ghost" target="_blank" rel="noopener">チラシを見る</a>';
+  box.firstChild.href = SITE.flyerLink;
+}
+if (SITE.flyerSrc || SITE.flyerLink) {
+  box.hidden = false; box.setAttribute("data-reveal", "");
+  document.getElementById("applySplit").classList.add("has-flyer");
+}
+
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* skyline: random building heights */
+const sky = document.querySelector(".sky");
+const n = innerWidth < 720 ? 14 : 24;
+for (let k = 0; k < n; k++) {
+  const i = document.createElement("i");
+  i.style.height = (90 + Math.round(Math.abs(Math.sin(k * 1.7)) * 190)) + "px";
+  i.style.setProperty("--i", k);
+  sky.appendChild(i);
+}
+requestAnimationFrame(() => document.querySelector(".hero").classList.add("loaded"));
+
+/* marquee: duplicate the strip so the loop is seamless */
+const track = document.getElementById("track");
+track.innerHTML += track.innerHTML;
+
+/* scroll reveal + count-up */
+const countUp = el => {
+  const to = +el.dataset.to, t0 = performance.now(), dur = 1400;
+  const step = now => {
+    const p = Math.min(1, (now - t0) / dur);
+    el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("shown");
+  if (!still) e.target.querySelectorAll("[data-to]").forEach(countUp);
+  io.unobserve(e.target);
+}), { threshold: .15, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll("[data-reveal]").forEach(el => io.observe(el));
+
+/* 匿名の計測：表示・申込欄到達・申込クリック・FAQ開封を GAS 経由で Notion「🌐 サイト計測（日次）」へ。個人を特定する情報は送らない */
+const METRICS_URL = "https://script.google.com/macros/s/AKfycbwNb2hBXvWQ9Op-5HK7LzgYdH0kAYU7dAyYz7OBHXLVB1qRzZDB5RDiVNzAD-kDu_HE8w/exec";
+function sendMetric(type, extra) {
+  if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // 手元の確認では送らない
+  try {
+    const body = JSON.stringify(Object.assign({ action: "site_event", type }, extra));
+    if (!(navigator.sendBeacon && navigator.sendBeacon(METRICS_URL, body))) {
+      fetch(METRICS_URL, { method: "POST", body, mode: "no-cors", keepalive: true }).catch(() => {});
+    }
+  } catch (e) {}
+}
+(() => {
+  // 流入元：Instagramのプロフィール等に貼るリンクは ?from=ig / ?from=line を付けると確実に分かれる
+  const from = new URLSearchParams(location.search).get("from") || "";
+  const ua = navigator.userAgent, ref = document.referrer;
+  const src = /^(ig|instagram)$/i.test(from) || /Instagram/i.test(ua) || /instagram\.com/i.test(ref) ? "ig"
+            : /^line$/i.test(from) || /\bLine\//i.test(ua) || /line\.me/i.test(ref) ? "line" : "other";
+  // その日（NY時間）に初めて開いた端末かどうか
+  let newVisitor = true;
+  try {
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+    newVisitor = localStorage.getItem("lny6_seen") !== today;
+    localStorage.setItem("lny6_seen", today);
+  } catch (e) {}
+  sendMetric("view", { src, newVisitor });
+
+  const apply = document.getElementById("apply");
+  const seen = new IntersectionObserver(es => {
+    if (es.some(e => e.isIntersecting)) { sendMetric("reach"); seen.disconnect(); }
+  }, { threshold: .3 });
+  seen.observe(apply);
+
+  document.querySelectorAll('a[href*="partiful.com"]').forEach(a => a.addEventListener("click", () => sendMetric("click")));
+  document.querySelectorAll(".faq details").forEach(d => d.addEventListener("toggle", () => {
+    if (d.open) sendMetric("faq", { faq: d.querySelector("summary").textContent.replace(/[？?].*$/, "").slice(0, 40) });
+  }));
+})();
+
+document.getElementById("copyMail").addEventListener("click", async e => {
+  const t = document.getElementById("mail").textContent;
+  try { await navigator.clipboard.writeText(t); e.target.textContent = "コピーしました"; }
+  catch { const r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+});
+</script>
+</body>
+</html>
